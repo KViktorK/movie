@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { DataStorageService } from '../service/data-storage.service';
 
 @Component({
   selector: 'app-header',
@@ -6,8 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  search:string=''
+  constructor(
+    private _dataStorageService:DataStorageService,
+    private router: Router,
+              private route: ActivatedRoute
+  ){}
 
-  constructor() { }
+  onSearch(){
+    if(this.search){
+      this._dataStorageService.searchMovie(this.search).subscribe()
+      this.router.navigate(['search'])
+    }
+    
+  }
 
   ngOnInit(): void {
   }

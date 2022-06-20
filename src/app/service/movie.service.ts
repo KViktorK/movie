@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { Movie } from '../shared/Movie';
+import {  Movie } from '../shared/Movie';
 
 @Injectable()
 export class MovieService {
-  moviesChange = new Subject<Movie[]>();
-
+  movieChanged = new Subject<Movie[]>();
   private movies: Movie[] = [];
 
-  getPopularMovies(){
-    return this.movies
+  getPopularMovies() {
+    return this.movies;
   }
-
-  getMovie(index:number){
-    return this.movies[index]
+  setMovies(movies:Movie[]){
+    this.movies = movies
+    this.movieChanged.next(this.movies.slice())
   }
 }

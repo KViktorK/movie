@@ -1,15 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { DataStorageService } from 'src/app/service/data-storage.service';
+
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.css']
+  styleUrls: ['./home-page.component.css'],
 })
 export class HomePageComponent implements OnInit {
-  
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(
+    private _dataStorageService:DataStorageService
+  ){}
+  fetchDB(){
+    this._dataStorageService.getPopularMovies().subscribe()
   }
-
+  ngOnInit() {
+   this.fetchDB()
+  }
 }

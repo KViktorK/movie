@@ -1,0 +1,32 @@
+.navbar {
+  padding-top: 30px;
+  padding-bottom: 100px;
+}
+.img {
+  z-index: -1;
+  background-image: url("https://img.freepik.com/free-photo/arrangement-film-elements-red-background-with-copy-space_23-2148457861.jpg?w=1060");
+  background-size: cover;
+}
+.nav-link {
+  padding: 10px 50px;
+  border-radius: 10px;
+  border: 2px solid #000;
+  color: black;
+  margin-right: 15px;
+}
+.nav-link:hover,
+.nav-link:focus{
+color: #fff;
+border: 2px solid #fff
+} 
+.navbar-brand {
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #000;
+    color: black;
+}
+.navbar-brand:hover,
+.navbar-brand:focus{
+color: #fff;
+border: 2px solid #fff
+} 

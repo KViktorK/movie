@@ -1,4 +1,4 @@
-export interface IMoviePopular{
+export interface IMovie{
   results: Movie[]
 }
 interface IGenres{

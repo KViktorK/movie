@@ -4,7 +4,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { MoviesServiceDB } from './service/moviesDB.service';
+
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { LibraryPageComponent } from './pages/library-page/library-page.component';
 import { MoviesListComponent } from './pages/home-page/components/movies-list/movies-list.component';
@@ -12,6 +12,10 @@ import { MovieItemComponent } from './pages/home-page/components/movie-item/movi
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { MovieService } from './service/movie.service';
+import { RouterModule } from '@angular/router';
+
+import { MovieDetailComponent } from './pages/home-page/components/movie-detail/movie-detail.component';
+import { SearchPageComponent } from './pages/search-page/search-page.component';
 
 @NgModule({
   declarations: [
@@ -20,9 +24,12 @@ import { MovieService } from './service/movie.service';
     LibraryPageComponent,
     MoviesListComponent,
     MovieItemComponent,
-    HeaderComponent
+    HeaderComponent,
+    MovieDetailComponent,
+    SearchPageComponent
   ],
   imports: [
+    RouterModule,
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
@@ -31,7 +38,7 @@ import { MovieService } from './service/movie.service';
     ReactiveFormsModule,
     CommonModule
   ],
-  providers: [MoviesServiceDB,MovieService],
+  providers: [MovieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

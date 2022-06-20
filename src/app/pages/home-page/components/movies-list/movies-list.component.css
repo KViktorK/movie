@@ -1,0 +1,19 @@
+.container{
+    margin-top: 50px;
+}
+.nav-link {
+    padding: 10px 50px;
+    border-radius: 10px;
+    border: 2px solid #000;
+    color: black;
+    margin-right: 15px;
+  }
+  .nav-link:hover,
+  .nav-link:focus{
+    background-color: red;
+  color: #fff;
+  border: 2px solid #fff
+  } 
+  .search{
+    margin-bottom: 30px;
+  }
