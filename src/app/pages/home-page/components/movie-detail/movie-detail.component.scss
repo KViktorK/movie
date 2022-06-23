@@ -1,0 +1,19 @@
+.card{
+    position: relative;
+    padding: 10px;
+}
+.card-img{
+    width: 40%;
+}
+.bi::before{
+    cursor: pointer;
+    z-index: 1099999999;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+}
+.bi-x-circle:hover,
+.bi-x-circle:focus{
+    color: red;
+}

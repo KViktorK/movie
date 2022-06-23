@@ -1,1 +1,18 @@
-<p>movie-detail works!</p>
+<app-modal id="modal_movie-item">
+  <i (click)="onCancel()" class="bi bi-x-circle" style="font-size: 2rem;"></i>
+  <img src="https://image.tmdb.org/t/p/w500/{{movie?.poster_path}}" alt="{{movie?.title}}" class="card-img">
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{movie?.title}}</h5>
+    <h6>Genres: </h6>
+    <div class="d-flex justify-content-around" >
+      <p *ngFor="let genre of movie?.genres" 
+      class="card-text">{{genre.name}}</p>
+    </div>
+    <h6>Overview:</h6>
+    <p class="card-text">{{movie?.overview}}</p>
+    
+  </div>
+  <button href="#" class="btn btn-primary">Add to library </button>
+</div>
+</app-modal>

@@ -6,9 +6,12 @@ import {  Movie } from '../shared/Movie';
 export class MovieService {
   movieChanged = new Subject<Movie[]>();
   private movies: Movie[] = [];
-
+  
   getPopularMovies() {
     return this.movies;
+  }
+  getMovieById(id:number){
+    return this.movies[id]
   }
   setMovies(movies:Movie[]){
     this.movies = movies

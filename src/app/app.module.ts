@@ -1,5 +1,5 @@
-import { CommonModule, } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,7 +15,8 @@ import { MovieService } from './service/movie.service';
 import { RouterModule } from '@angular/router';
 
 import { MovieDetailComponent } from './pages/home-page/components/movie-detail/movie-detail.component';
-import { SearchPageComponent } from './pages/search-page/search-page.component';
+
+import { ModalComponent } from './shared/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SearchPageComponent } from './pages/search-page/search-page.component';
     MovieItemComponent,
     HeaderComponent,
     MovieDetailComponent,
-    SearchPageComponent
+
+    ModalComponent,
   ],
   imports: [
     RouterModule,
@@ -36,9 +38,13 @@ import { SearchPageComponent } from './pages/search-page/search-page.component';
     FormsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
   ],
   providers: [MovieService],
-  bootstrap: [AppComponent]
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA,
+    NO_ERRORS_SCHEMA
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

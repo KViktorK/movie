@@ -5,25 +5,25 @@ import { DataStorageService } from '../service/data-storage.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  search:string=''
+  search: string = '';
   constructor(
-    private _dataStorageService:DataStorageService,
+    private _dataStorageService: DataStorageService,
     private router: Router,
-              private route: ActivatedRoute
-  ){}
+    private route: ActivatedRoute
+  ) {}
 
-  onSearch(){
-    if(this.search){
-      this._dataStorageService.searchMovie(this.search).subscribe()
-      this.router.navigate(['search'])
+  onSearch() {
+    if (this.search) {
+      this._dataStorageService.searchMovie(this.search).subscribe();
     }
-    
   }
-
-  ngOnInit(): void {
+  onChange(){
+    if(!this.search){
+      this._dataStorageService.getPopularMovies().subscribe()
+    }
   }
-
+  ngOnInit(): void {}
 }

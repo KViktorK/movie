@@ -15,6 +15,7 @@
         <div class="d-flex col-8" role="search">
           <input class="form-control me-2" type="search" 
           [(ngModel)]="search"
+          (ngModelChange)="onChange()"
           placeholder="Search movie" aria-label="Search">
           <button class="btn nav-link" (click)="onSearch()">Search</button>
         </div>
